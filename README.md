@@ -65,7 +65,7 @@ Then, load the datasets:
 ```
 metadata <- Load_metadata(metadata_path = "STENSL_example_metadata.txt")
 otus <- Load_CountMatrix(CountMatrix_path = "STENSL_example_count_matrix.txt")
-
+```
 
 ```
 MAX_ITERS = 10
