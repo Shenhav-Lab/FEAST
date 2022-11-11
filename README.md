@@ -63,17 +63,22 @@ library(FEAST)
 
 Then, load the datasets:
 ```
-meta = read.table('Data_files/metadata_example_stensl.txt', sep='\t', header=T)
-otus = read.table('Data_files/otu_example_stensl.txt', sep='\t', header=T)
-```
+metadata <- Load_metadata(metadata_path = "STENSL_example_metadata.txt")
+otus <- Load_CountMatrix(CountMatrix_path = "STENSL_example_count_matrix.txt")
+
 
 ```
+MAX_ITERS = 10
+COVERAGE_DEPTH = 10000
+
 result <- STENSL(
-	C=as.matrix(otus),
-	metadata=meta,
-	EM_iterations=MAX_ITERS,
-	COVERAGE=COVERAGE_DEPTH
+  C=as.matrix(otus),
+  metadata=metadata,
+  EM_iterations=MAX_ITERS,
+  COVERAGE=COVERAGE_DEPTH
 )
+
+write.csv(file = "STENSL_results.csv", x = result$proportions_mat)
 ```
 
 *STENSL* uses the same inpurt format as *FEAST*.
