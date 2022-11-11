@@ -68,6 +68,7 @@ otus <- Load_CountMatrix(CountMatrix_path = "STENSL_example_count_matrix.txt")
 ```
 
 ```
+Set parameters and run STENSL
 MAX_ITERS = 10
 COVERAGE_DEPTH = 10000
 
